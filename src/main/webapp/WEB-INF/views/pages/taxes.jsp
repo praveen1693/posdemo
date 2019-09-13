@@ -1,14 +1,19 @@
  <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  
-<body><br/><br/>
+<body>
 <div align="center">
-<h1>TAXES TABLE</h1><hr>
+<h1>TAXES MENU</h1><hr>
 
 <form:form method="POST" modelAttribute="taxes">
     <form:input type="hidden" path="id" id="id"/>
-    <form:input type="hidden" path="status" id="status"/>
-    <form:input type="hidden" path="taxid" id="taxid"/>
+    <form:input type="hidden" path="status" id="status" value="ACTIVE"/>
+    
     <table>
+    <tr>
+    	<td><label>Tax ID:</label></td>
+    	<td><form:input path="taxid" id="taxid"/></td>
+    </tr>
 	<tr>
 		<td><label>Tax Name:</label></td>
 		<td><form:input path="taxname" id="taxname"  /></td>
@@ -21,7 +26,17 @@
 		<td><input type="submit" value="ADD"/></td>
 		<td><input type="submit" value="INACTIVATE"/></td>
 	</tr>
-</table>
+	</table>
+	<br/><br/>
+	<h3>Existing Taxes: </h3>
+	<table>
+	<c:forEach items="${taxList}" var="txList">
+		<tr>
+			<td>${txList.taxrate}</td>
+			<td>${txList.status}</td>
+		</tr>
+	</c:forEach>
+	</table>
 </form:form>
 
 </div>

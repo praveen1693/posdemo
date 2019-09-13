@@ -31,6 +31,12 @@
        <put-attribute name="body" value="/WEB-INF/views/pages/menu.jsp" />  
    </definition> 
    
+   <!-- Menu Master Page -->
+   <definition name="menumaster" extends="base-definition">  
+       <put-attribute name="title" value="menumaster" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/menumaster.jsp" />  
+   </definition> 
+   
    <!-- L1 Menu Page -->
    <definition name="l1menu" extends="base-definition">  
        <put-attribute name="title" value="l1menu" />  

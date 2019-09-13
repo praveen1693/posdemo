@@ -19,7 +19,7 @@ public class Taxes {
 	
 	@NotEmpty
 	@Column(name = "taxid", unique=true, nullable = false)
-	private int taxid;
+	private String taxid;
 	
 	@Column(name = "taxname", nullable = false)
 	private String taxname;
@@ -62,11 +62,13 @@ public class Taxes {
 		this.status = status;
 	}
 
-	public int getTaxid() {
+	
+
+	public String getTaxid() {
 		return taxid;
 	}
 
-	public void setTaxid(int taxid) {
+	public void setTaxid(String taxid) {
 		this.taxid = taxid;
 	}
 
